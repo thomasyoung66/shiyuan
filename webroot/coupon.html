@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>我的优惠券</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<style>
+
+		</style>
+	</head>
+
+	<body class="body_style">
+		<div id="main-content" class="mui-content">
+			<!--
+			<div class="div-coupon-frame">
+				<div class="div-coupon-frame-left">
+					<table style="width: 100%;height:100%">
+						<tr>
+							<td style="text-align: center; vertical-align: middle;">
+								<div class="div-coupon-frame-left-money">￥<font size="7">100</font></div>
+								<div class="div-coupon-frame-left-note">满10000元减100</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="div-coupon-frame-right">
+
+
+					<table style="width: 100%;height:100%">
+						<tr>
+							<td style="text-align: left; vertical-align: middle;">
+								<div class="div-coupon-frame-right-name">MAXHUB微商城</div>
+								<div class="div-coupon-frame-right-time">有效期:2017-08-08 23:59:59</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="div-clear"></div>
+			</div>
+		-->
+
+		</div>
+		<script src="js/mui.js"></script>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="appjs/app.js"></script>
+
+		<script type="text/javascript" charset="utf-8">
+			jQuery.getScript("appjs/coupon.js?rnd=" + Math.random(), function(data, status, jqxhr) {
+				loadCouponInfo();
+			});
+
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		</script>
+	</body>
+	<script>
+		function check_mui_css() {
+			$("#my_nav").css("background-color", "#ffffff");
+		}
+		check_mui_css();
+		$(document).ready(function() {
+			$('#slider').height($(window).height() / 3);
+		});
+	</script>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>订单推广</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<style>
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+			.oa-contact-cell.mui-table .mui-table-cell {
+				padding: 11px 0;
+				vertical-align: middle;
+			}
+			
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+			
+			.oa-contact-avatar {
+				width: 75px;
+			}
+			
+			.oa-contact-avatar img {
+				border-radius: 50%;
+			}
+			
+			.oa-contact-content {
+				width: 100%;
+			}
+			
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			
+			.oa-contact-name,
+			oa-contact-position {
+				float: left;
+			}
+			
+.mui-badge
+{
+    font-size: 12px;
+    line-height: 1;
+    display: inline-block;
+    padding: 3px 6px;
+    color: #808080;
+    border-radius: 0px !important;
+     background-color: rgb(255,255,255) !important;
+}
+
+		</style>
+	</head>
+
+	<body class="body_style">
+		<div class="mui-content">
+
+			<div class="div-extend-order-frame">
+				<div class="div-extend-order-name-left">
+					用户名：刘德华
+				</div>
+				<div class="div-extend-order-name-right">
+					2017-06-16 22:52:00
+				</div>
+				<div class="div-clear"></div>
+				<div class="div-line"></div>
+				<div class="div-extend-order-type">
+					推广商品: MAXHUB标准版本 55寸
+				</div>
+				<div class="div-extend-order-price-left">
+					
+				</div>
+				<div class="div-extend-order-price-right">
+					订单金额：<span class="color-high">￥99999</span>
+				</div>
+				<div class="div-clear"></div>
+			</div>
+
+			<div class="div-extend-order-frame">
+				<div class="div-extend-order-name-left">
+					用户名：刘德华
+				</div>
+				<div class="div-extend-order-name-right">
+					2017-06-16 22:52:00
+				</div>
+				<div class="div-clear"></div>
+				<div class="div-line"></div>
+				<div class="div-extend-order-type">
+					推广商品: MAXHUB标准版本 55寸
+				</div>
+				<div class="div-extend-order-price-left">
+					
+				</div>
+				<div class="div-extend-order-price-right">
+					订单金额：<span class="color-high">￥99999</span>
+				</div>
+				<div class="div-clear"></div>
+			</div>
+			
+		</div>
+		<script src="js/mui.js"></script>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="appjs/app.js"></script>
+
+		<script type="text/javascript" charset="utf-8">
+			jQuery.getScript("appjs/extend_order.js?rnd=" + Math.random(), function(data, status, jqxhr) {
+				loadExtendOrder();
+			});
+
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		</script>
+	</body>
+	<script>
+		function check_mui_css() {
+			$("#my_nav").css("background-color", "#ffffff");
+		}
+		check_mui_css();
+		$(document).ready(function() {
+			$('#slider').height($(window).height() / 3);
+		});
+	</script>
+
+</html>

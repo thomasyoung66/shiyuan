@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>MAXHUB微信商城</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+		
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<style>
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+			
+
+		</style>
+	</head>
+
+	<body class="body_style">
+		<div class="mui-content">
+
+
+		<table width="100%">
+			<tr>
+				<td width="100%" align="center">
+					<div id="input_name" class="div-input-left">
+							
+				</div>	
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" align="center">
+					<input class="div-input-input" id="input_value"></input>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" align="center" height="50px">
+					<img class="img-input-bottom" src="img/buttom_submit.png" onclick="save_data()"></img>
+				</td>
+			</tr>
+		</table>
+<!--
+			<div class="div-input-frame">
+				<div id="input_name" class="div-input-left">
+							
+				</div>
+				<div class="div-input-right mui-input-clear">
+						<input class="div-input-input" id="input_value"></input>
+				</div>
+		
+				 <div class="div-input-buttom">
+		    		<img class="img-input-bottom" src="img/buttom_submit.png" onclick="save_data()"></img>
+		    	</div>
+		    
+			</div>
+		
+			
+-->
+		    
+		</div>
+		<script src="js/mui.js"></script>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/layer.js"></script>
+		
+		<script src="appjs/app.js"></script>
+
+		<script type="text/javascript" charset="utf-8">
+			jQuery.getScript("appjs/input.js?rnd=" + Math.random(), function(data, status, jqxhr) {
+				loadInputInfo();
+			});
+
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		</script>
+	</body>
+	<script>
+		function check_mui_css() {
+			$("#my_nav").css("background-color", "#ffffff");
+		}
+		check_mui_css();
+		$(document).ready(function() {
+			$('#slider').height($(window).height() / 3);
+		});
+	</script>
+
+</html>

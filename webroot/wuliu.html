@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>MAXHUB微信商城</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<style>
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+			.oa-contact-cell.mui-table .mui-table-cell {
+				padding: 11px 0;
+				vertical-align: middle;
+			}
+			
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+			
+			.oa-contact-avatar {
+				width: 75px;
+			}
+			
+			.oa-contact-avatar img {
+				border-radius: 50%;
+			}
+			
+			.oa-contact-content {
+				width: 100%;
+			}
+			
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			
+			.oa-contact-name,
+			oa-contact-position {
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body class="body_style">
+		<div class="mui-content">
+
+		
+			<div class="div-wuliu-header">
+				<div class="div-wuliu-header-left">
+					<img src="img/wuliu/wuliu_bk.png"/>
+				</div>
+				<div class="div-wuliu-header-right">
+					<div class="div-wuliu-header-item0">
+						物流状态: <span id="wl_status" style="color:red"></span>
+					</div>
+					<div class="div-wuliu-header-item1">
+						快递公司: <span id="corp"></span>
+					</div>
+					<div class="div-wuliu-header-item1">
+						运单编号: <span id="code"></span>
+					</div>
+				</div>
+				<div class="div-clear"></div>
+			</div>
+			
+			<div id="wuliu_body" class="div-wuliu-body">
+				<div class="div-wuliu-dyn">物流实时动态</div>
+				<!--
+				<div class="div-wuliu-item ">
+					<div class="div-wuliu-time-new">
+						<div>
+							<img src="img/wuliu/wu_arriv.png" ></img>
+						</div>
+						
+						<div class="div-wuliu-hist-line"></div>
+					</div>
+					<div class="div-wuliu-time-content">
+						<div class="div-wuliu-time-addr">中国广东省广州市天河华景新城中国广东省广州市天河华景</div>
+						<div class="div-wuliu-time-text">2017-06-10 10:00:00</div>
+						<div class="div-wuliu-time-text">2017-06-10 10:00:00</div>
+						
+						
+					</div>
+					<div class="div-clear"></div>
+				</div>
+				<div class="div-wuliu-item">
+					<div class="div-wuliu-time-new">
+						<div style="margin:0 auto; margin-left: 3px;">
+							<img style="width:16px;" src="img/wuliu/wu_go.png" ></img>
+						</div>
+						
+						<div class="div-wuliu-hist-line"></div>
+					</div>
+					<div class="div-wuliu-time-content">
+						<div class="div-wuliu-time-addr">中国广东省广州市天河华景新城中国广东省广州市天河华景</div>
+						<div class="div-wuliu-time-text">2017-06-10 10:00:00</div>
+						
+					</div>
+					<div class="div-clear"></div>
+				</div>
+				<div class="div-wuliu-item">
+					<div class="div-wuliu-time-new">
+						<div style="margin:0 auto; margin-left: 3px;">
+							<img style="width:16px;" src="img/wuliu/wu_go.png" ></img>
+						</div>
+						
+						
+					</div>
+					<div class="div-wuliu-time-content">
+						<div class="div-wuliu-time-addr">商城已经发货</div>
+						<div class="div-wuliu-time-text"></div>
+						
+					</div>
+					<div class="div-clear"></div>
+				</div>
+				-->
+			</div>
+
+		</div>
+		<script src="js/mui.js"></script>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="appjs/app.js"></script>
+
+		<script type="text/javascript" charset="utf-8">
+			jQuery.getScript("appjs/wuliu.js?rnd=" + Math.random(), function(data, status, jqxhr) {
+				loadWuLiu();
+			});
+
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		</script>
+	</body>
+	<script>
+		function check_mui_css() {
+			$("#my_nav").css("background-color", "#ffffff");
+		}
+		check_mui_css();
+		$(document).ready(function() {
+			$('#slider').height($(window).height() / 3);
+		});
+	</script>
+
+</html>

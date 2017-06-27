@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>我的订单</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<style>
+			
+
+			.mui-control-content {
+				background-color: #f1f1f1;
+				min-height: 615px;
+				
+			}
+			
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
+			}
+			
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				color: #ff6b00 !important;
+				border-bottom: 2px solid #ff6b00 !important;
+				background: none;
+			}
+			
+			.mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
+				background-color: #ff6b00 !important;
+			}
+			.slider_title{
+				background: #fff;
+			}
+
+		</style>
+	</head>
+
+	<body class="body_style">
+		<div class="mui-content">
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="slider_title mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item" href="#item1mobile">全部</a>
+					<a class="mui-control-item" href="#item2mobile">待付款</a>
+					<a class="mui-control-item" href="#item3mobile">待发货</a>
+					<a class="mui-control-item" href="#item4mobile">待收货</a>
+					<a class="mui-control-item" href="#item5mobile">已完成</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-41"></div>
+				<div class="mui-slider-group" height="100%">
+					<!-- begin item1-->
+					<div id="item1mobile" class="mui-slider-item mui-control-content" height="100%" style="overflow-y: scroll;">
+				<!--
+						<div class="div_order">
+							<div class="div-order-item-header">
+								<div class="div-order-item-left">订单号:xxxxxx</div>
+								<div class="div-order-item-right color-high">已经发货</div>
+								<div class="div-clear"></div>
+							</div>
+							<div class="div-line"/></div>
+							<div>
+								<div class="div-order-body-left">
+									<img src="img/order/order_bk.png">
+								</div>
+								<div class="div-order-body-right">
+									<div class="div-order-body-item">
+										<div class="div-order-body-item-left">
+											商品名称
+										</div>
+										<div class="div-order-body-item-right">
+											￥9999
+										</div>	
+										<div class="div-clear"></div>
+									</div>
+									<div class="div-order-body-item1">
+										<div class="div-order-body-item1-left">
+											产品规格:无规格
+										</div>
+										<div class="div-order-body-item1-right">
+											x1
+										</div>	
+										<div class="div-clear"></div>
+									</div>
+								</div>
+								<div class="div-clear"></div>
+								
+							</div>
+							<div class="div-order-summer">
+								共二件商品： 合计:￥98888元 (含运费:￥0.00元)
+							</div>
+							<div class="div-line"/></div>
+							<div class="div-order-bottom">
+								<div class="div-right">
+									<div class="div-button-order-ok">确认收货</div>
+									<div class="div-button-order-wuliu">查看物流</div>
+									
+									<div class="div-clear"></div>
+									
+								</div>
+								<div class="div-clear"></div>
+							</div>
+							
+						</div>
+					
+					-->
+				
+					</div>
+					<!-- end item1-->
+					<!-- begin item2-->
+					<div id="item2mobile" class="mui-slider-item mui-control-content" height="100%" style="overflow-y: scroll;">
+
+					</div>
+					<!-- end item2-->
+					<!-- begin item3-->
+					<div id="item3mobile" class="mui-slider-item mui-control-content" height="100%" style="overflow-y: scroll;">
+
+					</div>
+					<!-- end item3-->
+					<!-- begin item4-->
+					<div id="item4mobile" class="mui-slider-item mui-control-content" height="100%" style="overflow-y: scroll;">
+
+					</div>
+					<!-- end item4-->
+					<!-- begin item5-->
+					<div id="item5mobile" class="mui-slider-item mui-control-content" height="100%" style="overflow-y: scroll;">
+
+					</div>
+					<!-- end item5-->
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.js"></script>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="appjs/app.js"></script>
+
+		<script type="text/javascript" charset="utf-8">
+
+
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		</script>
+	</body>
+	<script>
+		function check_mui_css() {
+			$("#my_nav").css("background-color", "#ffffff");
+		}
+		check_mui_css();
+
+		function initTab() {
+			h=$(window).height()-40;
+			$(".mui-slider-group").css("height",h+"px");
+			$(".mui-scroll").height(h+"px");
+			$("#slider").height($(window).height()+"px");
+
+
+			document.getElementById('slider').addEventListener('slide', function(e) {
+				//alert(e.detail.slideNumber);
+				loadMyOrder(e.detail.slideNumber);
+	
+			});
+			return ;
+			var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
+			$('.mui-input-group').on('change', 'input', function() {
+				if(this.checked) {
+					sliderSegmentedControl.className = 'mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-' + this.value;
+					//force repaint
+					sliderProgressBar.setAttribute('style', sliderProgressBar.getAttribute('style'));
+				}
+			});
+
+			//$("#slider").css("heigth","600px !important");
+			
+		}
+		$(document).ready(function() {
+			$('#slider').height($(window).height() / 3);
+			initTab();
+			mui('.mui-slider').slider().gotoItem(getvalue("tab"));
+			jQuery.getScript("appjs/my_order.js?rnd=" + Math.random(), function(data, status, jqxhr) {
+				if (getvalue("tab")==0)
+					loadMyOrder(0);
+			});
+		});
+	</script>
+
+</html>

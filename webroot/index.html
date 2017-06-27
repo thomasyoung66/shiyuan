@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>MAXHUB微信商城</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+		<!--App自定义的css
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		-->
+		<style>
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+			.oa-contact-cell.mui-table .mui-table-cell {
+				padding: 11px 0;
+				vertical-align: middle;
+			}
+			
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+			
+			.oa-contact-avatar {
+				width: 75px;
+			}
+			
+			.oa-contact-avatar img {
+				border-radius: 50%;
+			}
+			
+			.oa-contact-content {
+				width: 100%;
+			}
+			
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			
+			.oa-contact-name,
+			oa-contact-position {
+				float: left;
+			}
+			.mui-media-body{
+				font-size:12px !important;
+			}
+		</style>
+	</head>
+
+	<body class="body_style">
+		<iframe style="display:none;position:absolute;z-index:10000;background-color:#FFFFFF" id="body_frame" width="100%" height="100%" src="" scrolling=yes frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
+		
+		<!--导航开始-->
+		<nav id="my_nav" class="mui-bar mui-bar-tab my-mui-bar-tab">
+			<a class="mui-tab-item main_icon_left" href="#tabbar" myseq="1">
+				<span class="mui-icon my-mui-icon">
+				<img id="home_tab1" class="main_home_icon" src="img/home_tab1_off.png"/></span>
+				<!--<span class="mui-icon mui-icon-home"></span>-->
+				<span class="mui-tab-label">全部分类</span>
+			</a>
+			<a class="mui-tab-item mui-active " href="#tabbar-with-chat" myseq="2">
+				<span class="mui-icon my-mui-icon">
+				<img id="home_tab2" class="main_home_icon" src="img/home_tab2_on.png"/></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a id="tab_maxds" class="mui-tab-item" href="#tabbar-with-contact" myseq="3">
+				<span class="mui-icon my-mui-icon">
+				<img id="home_tab3" class="main_home_icon" src="img/home_tab3_off.png"/></span>
+				<span class="mui-tab-label">MAX大史</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-map" myseq="4">
+				<span class="mui-icon my-mui-icon">
+				<img id="home_tab4" class="main_home_icon" src="img/home_tab4_off.png"/></span>
+				<span class="mui-tab-label">个人中心</span>
+			</a>
+		</nav>
+		<!--导航结束-->
+		<div class="mui-content">
+			<!--全部分类-->
+			<div id="tabbar" class="mui-control-content ">
+				<!--
+				<div class="div_class">
+					<table width="100%">
+						<tr>
+							<td width="20%" style="text-align: center;">
+								旗舰版
+							</td>
+							<td width="40%">
+								<img class="div-class-image" src="img/class/c1.png" />
+							</td>
+							<td width="40%">
+								<img class="div-class-image" src="img/class/c2.png"  />
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<img class="div-class-image" src="img/class/c3.png" />
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="div_class">
+					<table width="100%">
+						<tr>
+							<td width="20%" style="text-align: center;">
+								增强版
+							</td>
+							<td width="40%">
+								<img class="div-class-image" src="img/class/c4.png" />
+							</td>
+							<td width="40%">
+								<img class="div-class-image" src="img/class/c5.png"  />
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<img class="div-class-image" src="img/class/c6.png" />
+							</td>
+							<td>
+								
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="div_class">
+					<table width="100%">
+						<tr>
+							<td width="20%" style="text-align: center;">
+								标准版
+							</td>
+							<td width="40%">
+								<img class="div-class-image" src="img/class/c7.png" />
+							</td>
+							<td width="40%">
+								<img class="div-class-image" src="img/class/c8.png"  />
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<img class="div-class-image" src="img/class/c9.png" />
+							</td>
+							<td>
+								<img class="div-class-image" src="img/class/c10.png" />
+							</td>
+						</tr>
+					</table>
+				</div>
+			-->
+			</div>
+			<!--全部分类结束-->
+
+			<!--首页开始-->
+			<div id="tabbar-with-chat" class="mui-control-content mui-active">
+				
+			
+				
+				<div id="search_all" class="mui-input-row mui-search div-home-search">
+					<input id="all_search" type="search" class="input-home-search mui-input-clear" placeholder="搜索">
+				</div>
+				<div id="slider" class="mui-slider ">
+					<div id="banner" class="mui-slider-group mui-slider-loop">
+				
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<a href="#">
+								<img  width="100%"  height="100%" id="banner_first" class="img-home-slier-item" src="">
+							</a>
+						</div>
+<!--
+						<div class="mui-slider-item">
+							<a href="#">
+								<img width="100%" class="img-home-slier-item" src="img/home/home_slider1.png">
+							</a>
+						</div>
+
+						<div class="mui-slider-item">
+							<a href="#">
+								<img width="100%" class="img-home-slier-item" src="img/home/home_slider2.png">
+							</a>
+						</div>
+
+						<div class="mui-slider-item">
+							<a href="#">
+								<img width="100%" class="img-home-slier-item" src="img/home/home_slider3.png">
+							</a>
+						</div>
+						-->
+					
+
+
+						<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) 
+							
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<a href="#">
+								<img width="100%" id="banner_last" class="img-home-slier-item" src="">
+							</a>
+						</div>
+						-->
+					
+				
+
+					</div>
+					<div id="slider_indicator" class="mui-slider-indicator">
+						
+						<div class="mui-indicator mui-active"></div>
+						<!--
+						<div class="mui-indicator"></div>
+						<div class="mui-indicator"></div>
+					-->
+
+					</div>
+				</div>
+				<div>
+
+					<div class="div-home-coupon" onclick="gotoGetCoupon()"></div>
+					<!--
+					<div class="div-home-coupon1"  onclick="gotoGetCoupon()"></div>
+					-->
+
+				</div>
+				<div>
+					&nbsp;
+				</div>
+
+				<div>
+					<ul class="mui-table-view mui-grid-view mui-grid-91" style="background: #fff;">
+
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="javascript:gotoMaxZst()">
+								<span class="mui-icon ">
+									<img id="home_tab4" class="main_nav_icon" src="img/max_zst.png"/>
+								</span>
+								<div class="mui-media-body">MAX知识堂</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="javascript:gotoBeginExtend()">
+								<span class="mui-icon">
+									
+									<img id="home_tab4" class="main_nav_icon" src="img/wytg.png"/>
+								</span>
+								<div class="mui-media-body">我要推广</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="javascript:gotoMaxDs()">
+								<span class="mui-icon ">
+									<img id="home_tab4" class="main_nav_icon" src="img/max_ds.png"/>
+									
+								</span>
+								<div class="mui-media-body">MAX大使</div>
+							</a>
+						</li>
+
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="#">
+								<span class="mui-icon ">
+									<img id="home_tab4" class="main_nav_icon" src="img/kezx.png"/>
+								</span>
+								<div class="mui-media-body">客户咨询</div>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+
+				<div id="big_image">
+					
+					<img class="img-main-body" width="100%" src="img/main_1.png" onclick="gotoHb(0)"></img>
+					<img class="img-main-body" width="100%" src="img/main_2.png" onclick="gotoHb(1)"></img>
+					<img class="img-main-body" width="100%" src="img/main_3.png" onclick="gotoHb(2)"></img>
+					<img class="img-main-body" width="100%" src="img/main_4.png" onclick="gotoHb(3)"></img>
+					
+				</div>
+
+				<div>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+				</div>
+
+			</div>
+			<!--首页结束-->
+
+			<!--max大史开始-->
+			<div id="tabbar-with-contact" class="mui-control-content">
+				<div class="Center-Container">
+					  <div class="Absolute-Center">
+							
+							<img class="head_image" src="img/header.png"/>
+							</p>
+							六六大顺
+							
+				     </div>
+					<img width="100%" src="img/max/head_bg.png" />
+				</div>
+				<div class="div-max-meet">
+					你已经让3位朋友开会更高效
+				</div>
+				<div>
+					<ul class="mui-table-view mui-grid-view mui-grid-91" style="background: #fff;margin-bottom: 0px;">
+
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 div-5tab-width">
+							<a href="javascript:gotoProductAll()">
+								<span class="mui-icon ">
+									<img id="home_tab4" class="main_nav_icon" src="img/max/qbsp.png"/>
+								</span>
+								<div class="mui-media-body">全部商品</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 div-5tab-width">
+							<a href="#">
+								<span class="mui-icon">
+									
+									<img id="home_tab4" class="main_nav_icon" src="img/max/jfjl.png"/>
+								</span>
+								<div class="mui-media-body">积分奖励</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 div-5tab-width">
+							<a href="javascript:gotoBeginExtend()">
+								<span class="mui-icon ">
+									<img id="home_tab4" class="main_nav_icon" src="img/max/kstg.png"/>
+									
+								</span>
+								<div class="mui-media-body">开始推广</div>
+							</a>
+						</li>
+
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 div-5tab-width">
+							<a href="javascript:goto_my_friend()">
+								<span class="mui-icon ">
+									<img id="home_tab4" class="main_nav_icon" src="img/max/wdpy.png"/>
+								</span>
+								<div class="mui-media-body">我的朋友</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 div-5tab-width">
+							<a href="javascript:goto_extend_order()">
+								<span class="mui-icon ">
+									<img id="home_tab4" class="main_nav_icon" src="img/max/ddtg.png"/>
+								</span>
+								<div class="mui-media-body">订单推广</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 div-5tab-width">
+							<a href="#">
+								<span class="mui-icon ">
+									<img id="home_tab4" class="main_nav_icon" src="img/max/wdtw.png"/>
+								</span>
+								<div class="mui-media-body">我的推广</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 div-5tab-width">
+							<a href="javascript:gotoPersonMax()">
+								<span class="mui-icon ">
+									<img id="home_tab4" class="main_nav_icon" src="img/max/grzl.png"/>
+								</span>
+								<div class="mui-media-body">个人资料</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 div-5tab-width">
+							<a href="javascript:gotoCorpInfo()">
+								<span class="mui-icon ">
+									<img id="home_tab4" class="main_nav_icon" src="img/max/gsjj.png"/>
+								</span>
+								<div class="mui-media-body">公司简介</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 div-5tab-width">
+							<a href="javascript:gotoMaxZst()">
+								<span class="mui-icon ">
+									<img id="home_tab4" class="main_nav_icon" src="img/max/zst.png"/>
+								</span>
+								<div class="mui-media-body">MAX知识堂</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="div-max-sale">
+					目前这些产品热销中，赶紧分享给朋友吧
+				</div>
+				<div style="background: red;" class="debug-div111">
+					<ul id="max_ds" class="mui-table-view mui-grid-view mui-grid-9" style="background:rgb(241, 242, 246);">
+						<!--
+						<li class="mui-table-view-cell mui-media mui-col-xs-6 ">
+							<a href="#">
+								<span class="mui-icon ">
+									<img  class="img-max-sale-column" src="img/max/p1.png"/>
+								</span>
+								<div class="mui-media-body div_max_sale_name">MAXHUB 旗舰版 65寸</div>
+								<div class="mui-media-body div_max_sale_price">¥79999</div>
+								
+								
+							</a>
+						</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-6 ">
+							<a href="#">
+								<span class="mui-icon">
+									
+									<img  class="img-max-sale-column" src="img/max/p2.png"/>
+								</span>
+								<div class="mui-media-body div_max_sale_name"></div>
+								<div class="mui-media-body div_max_sale_price"></div>
+								
+							</a>
+						</li>
+						
+						<li class="mui-table-view-cell mui-media mui-col-xs-6 ">
+							<a href="#">
+								<span class="mui-icon">
+									
+									<img  class="img-max-sale-column" src="img/max/p2.png"/>
+								</span>
+								<div class="mui-media-body div_max_sale_name">MAXHUB 增强版 65寸</div>
+								<div class="mui-media-body div_max_sale_price">¥79999</div>
+								
+							</a>
+						</li>
+						
+						<li class="mui-table-view-cell mui-media mui-col-xs-6 ">
+							<a href="#">
+								<span class="mui-icon ">
+									<img  class="img-max-sale-column" src="img/max/p3.png"/>
+									
+								</span>
+								<div class="mui-media-body div_max_sale_name">MAXHUB 标准版 55寸</div>
+								<div class="mui-media-body div_max_sale_price">¥79999</div>
+								
+								
+							</a>
+						</li>
+
+						<li class="mui-table-view-cell mui-media mui-col-xs-6 ">
+							<a href="#">
+								<span class="mui-icon ">
+									<img  class="img-max-sale-column" src="img/max/p4.png"/>
+								</span>
+								<div class="mui-media-body div_max_sale_name">MAXHUB 标准版 65寸</div>
+								<div class="mui-media-body div_max_sale_price">¥79999</div>
+								
+							</a>
+						</li>
+					-->
+					</ul>
+				</div>
+				
+				<div class="div-clear">
+	
+				</div>
+
+			</div>
+			<!--max大史结束-->
+			<!--个人中心开始-->
+			<div id="tabbar-with-map" class="mui-control-content">
+				<!--<div class="div-person-header-bk">
+					<img width="100%" src="img/person/bk.png" />
+
+				</div>-->
+				<div class="Center-Container">
+					  <div class="Absolute-Center">
+							
+							<img class="head_image" src="img/person/bk.png"/>
+							</p>
+							六六大顺
+							
+				     </div>
+					<img width="100%" src="img/max/head_bg.png" />
+				</div>
+				<div>
+					<ul class="mui-table-view mui-grid-view mui-grid-91" style="background: #fff;">
+
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="javascript:location.href='my_order.html?tab=1'">
+								<span class="mui-icon ">
+									<img id="home_tab4" class="person_nav_icon" src="img/person/dfk.png"/>
+								</span>
+								<div class="mui-media-body">待付款</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="javascript:location.href='my_order.html?tab=2'">
+								<span class="mui-icon">
+									
+									<img id="home_tab4" class="person_nav_icon" src="img/person/dfh.png"/>
+								</span>
+								<div class="mui-media-body">待发货</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="javascript:location.href='my_order.html?tab=3'">
+								<span class="mui-icon ">
+									<img id="home_tab4" class="person_nav_icon" src="img/person/dsh.png"/>
+									
+								</span>
+								<div class="mui-media-body">待收货</div>
+							</a>
+						</li>
+
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="javascript:location.href='my_order.html?tab=4'">
+								<span class="mui-icon ">
+									<img id="home_tab4" class="person_nav_icon" src="img/person/ywc.png"/>
+								</span>
+								<div class="mui-media-body">已完成</div>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+				<ul class="mui-table-view" style="margin: 10px">
+
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:gotoCoupon()" class="person-a">
+							<div class="mui-media-body div-person-item">
+							<img class="mui-media-object mui-pull-left person_item_icon" src="img/person/yhq.png">
+						
+								优惠券
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:gotoPerson();" class="person-a">
+							<div class="mui-media-body div-person-item">
+								<img class="mui-media-object mui-pull-left person_item_icon" src="img/person/xggrzl.png">
+							
+								修改个人资料
+							</div>
+						</a>
+					</li>
+
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:gotoBuger()" class="person-a">
+							<div class="mui-media-body div-person-item">
+								<img class="mui-media-object mui-pull-left person_item_icon" src="img/person/gwc.png">
+						
+								购物车
+							</div>
+						</a>
+					</li>
+
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:gotoAddr()" class="person-a" >
+								
+							<div class="mui-media-body div-person-item">
+							<img class="mui-media-object mui-pull-left person_item_icon" src="img/person/shdz.png">
+						
+								收货地址
+							</div>
+						</a>
+					</li>
+
+				</ul>
+				<div class="div-person-bottom">
+					<div class="div-person-bottom-left" onclick="gotoCorpInfo()">公司介绍</div>
+					<div class="div-person-bottom-center" onclick="gotoGjwt()">常见问题</div>
+					<div class="div-person-bottom-right">联系客服</div>
+					<div class="div-clear"></div>
+				</div>
+
+			</div>
+			<!--个人中心结束-->
+		</div>
+		<script src="js/mui.js"></script>
+		<script src="js/jquery-1.11.1.min.js"></script>
+
+		
+
+		
+
+		<script type="text/javascript" charset="utf-8">
+			//loadScript("appjs/app.js?rnd="+Math.random());
+			//loadScript("appjs/home.js?rnd="+Math.random());
+
+
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			
+			/*
+			var slider = mui("#slider");
+			document.getElementById("switch").addEventListener('toggle', function(e) {
+				if (e.detail.isActive) {
+					slider.slider({
+						interval: 5000
+					});
+				} else {
+					slider.slider({
+						interval: 0
+					});
+				}
+			});*/
+		</script>
+	</body>
+	<script>
+		function check_mui_css() {
+			$("#my_nav").css("background-color", "#ffffff");
+		}
+		check_mui_css();
+		
+		$(document).ready(function(){
+			jQuery.getScript("appjs/app.js?rnd="+Math.random(), function(data, status, jqxhr) {
+				$('head').append('<link href="css/app.css?rnd='+Math.random()+'" rel="stylesheet" type="text/css" />');
+				jQuery.getScript("appjs/home.js?rnd="+Math.random(), function(data, status, jqxhr) {
+					fix_home_screen();
+					loadHomeData();	
+				});
+			
+			});
+
+		});
+	</script>
+
+</html>

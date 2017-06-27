@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>开始推广</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<style>
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+
+		</style>
+	</head>
+
+	<body class="body_style">
+		
+		<div id="main-content" class="mui-content">
+			<!--
+			<div class="div-search-frame">
+				<div class="div-search-frame-left ">
+					<img src="img/search.png"></img>
+				</div>
+				<div class="div-search-frame-center">
+					<div class="div-search-name ">
+						MAXHUB增强版
+					</div>
+					<div class="div-search-money color-high">
+						￥9999.00
+					</div>	
+				</div>
+				<div class="div-search-frame-right">
+
+					<div class="div-search-bug">
+						购买
+					</div>
+				</div>
+				<div class="div-clear"></div>
+			</div>
+		-->
+		</div>
+		<script src="js/mui.js"></script>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="appjs/app.js"></script>
+
+		<script type="text/javascript" charset="utf-8">
+			jQuery.getScript("appjs/search.js?rnd=" + Math.random(), function(data, status, jqxhr) {
+				loadSearchData();
+			});
+
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		</script>
+	</body>
+	<script>
+		function check_mui_css() {
+			$("#my_nav").css("background-color", "#ffffff");
+		}
+		check_mui_css();
+		$(document).ready(function() {
+			$('#slider').height($(window).height() / 3);
+		});
+	</script>
+
+</html>

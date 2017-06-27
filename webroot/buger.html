@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>MAXHUB微信商城</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<style>
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+			.oa-contact-cell.mui-table .mui-table-cell {
+				padding: 11px 0;
+				vertical-align: middle;
+			}
+			
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+			
+			.oa-contact-avatar {
+				width: 75px;
+			}
+			
+			.oa-contact-avatar img {
+				border-radius: 50%;
+			}
+			
+			.oa-contact-content {
+				width: 100%;
+			}
+			
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			
+			.oa-contact-name,
+			oa-contact-position {
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body class="body_style">
+
+		<div class="div-buger-title">
+			<div class="div-bugger-bk">
+				<div class="div-buger-person">购买人:黄先生</div>
+				<div class="div-buger-phone">1866666666</div>
+			</div>
+			<table width="100%;">
+				<tr>
+					<td style="width:60px" valign="top" align="right" style="vertical-align: top;">
+						<img width="32px" src="img/bug/buger_icon.png" />
+					</td>
+					<td>
+						收件地址：广州广州广州广州广州广州广州广州广州广州
+					</td>
+					<td style="width:40px;" valign="top">
+			<img width="24px" src="img/bug/buger_right.png" />
+					</td>
+				</tr>
+			</table>
+
+			<img width="100%" src="img/bug/bug_title.png" />
+		</div>
+		<div class="div-buger-content">
+				<table width="100%">
+				  <tr>
+				    <td rowspan="4" width="20%"><img width="100px" src="img/bug/bug_demo.png"/></td>
+				    <td width="80%" height="30px" style="padding-left:20px;">商品名称111</td>
+				  </tr>
+				  <tr>
+				    <td height="30px" style="color:#8a8a8a;padding-left:20px;">商品规格:xxx</td>
+				  </tr>
+				  <tr>
+				    <td height="30px" style="color:rgb(255,107,0);padding-left:20px;">￥29999 <div style="float:right">x1</div></td>
+				  </tr>
+				  <tr>
+				    <td height="30px" style="color:#8a8a8a;padding-left:20px;">数量: 
+				    	<div style="float:right;height:32px;line-height:10px;text-align: center;">
+				    		<img  class="center-image-v"  width="32px" height="32px" style="width:32px;height:32px;margin-right:10px" src="img/bug/dec_price.png"/>
+				    		<span style="height:32px;line-height: 32px;">1</span>
+				    		<img class="center-image-v" width="32px" height="32px" style="width:32px;height:32px;margin-left:10px" src="img/bug/add_price.png"/>
+				    	</div>
+				    	<div class="div-clear"/>
+				    </td>
+				  </tr>
+				</table>
+
+		</div>
+		<div class="div-buger-content">
+			<table width="100%" style="margin: 10px;">
+				<tr style="padding: 10px 10px 10px 10px;">
+					<td width="70%" style="padding: 10px 10px 10px 10px;">
+						快递费用
+					</td>
+					<td align="right" style="padding: 10px 30px 10px 10px;">
+						0.0
+					</td>
+				</tr>
+				<tr>
+					<td width="70%" style="padding: 10px 10px 10px 10px;">
+						优惠信息:会员优惠
+					</td>
+					<td align="right" style="padding: 10px 30px 10px 10px;">
+						￥-499
+					</td>
+				</tr>
+				<tr>
+					<td width="70%" style="padding: 10px 10px 10px 10px;">
+						优惠卷信息：
+					</td>
+					<td align="right" style="padding: 10px 30px 10px 10px;">
+						0.0
+					</td>
+				</tr>
+				<tr>
+					<td width="70%" style="padding: 10px 10px 10px 10px;">
+
+					</td>
+					<td align="right" style="padding: 10px 30px 10px 10px;">
+						￥999999
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="div-buger-bottom">
+			<div class="div-buger-bottom-price">
+				合计:$9999999999
+			</div>
+			<div class="div-buger-bottom-bug">
+				提交订单
+			</div>
+		</div>
+
+
+		<script src="js/mui.js"></script>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="appjs/buger.js"></script>
+		<script src="appjs/app.js"></script>
+
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		</script>
+	</body>
+	<script>
+		function check_mui_css() {
+			$("#my_nav").css("background-color", "#ffffff");
+		}
+		check_mui_css();
+		$(document).ready(function() {
+			loadBugInfo();
+		});
+	</script>
+
+</html>

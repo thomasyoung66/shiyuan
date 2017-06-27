@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>MAXHUB微信商城</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<style>
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+			.oa-contact-cell.mui-table .mui-table-cell {
+				padding: 11px 0;
+				vertical-align: middle;
+			}
+			
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+			
+			.oa-contact-avatar {
+				width: 75px;
+			}
+			
+			.oa-contact-avatar img {
+				border-radius: 50%;
+			}
+			
+			.oa-contact-content {
+				width: 100%;
+			}
+			
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			
+			.oa-contact-name,
+			oa-contact-position {
+				float: left;
+			}
+			
+.mui-badge
+{
+    font-size: 12px;
+    line-height: 1;
+    display: inline-block;
+    padding: 3px 6px;
+    color: #808080;
+    border-radius: 0px !important;
+     background-color: rgb(255,255,255) !important;
+}
+
+		</style>
+	</head>
+
+	<body class="body_style">
+		<div class="mui-content">
+
+		    <div class="mui-card">
+		        <ul class="mui-table-view">
+
+		            <li class="mui-table-view-cell">
+		                <a class="mui-navigate-right" onclick="edit_input('name','姓名')">
+		                    <span id="name" class="mui-badge">黄咖啡</span>
+		                    		姓名
+		                </a>
+		            </li>
+		            <li class="mui-table-view-cell">
+		                <a class="mui-navigate-right" onclick="edit_input('phone','手机号码')">
+		                   <span id="phone" class="mui-badge">188888888</span>
+		                  		  手机号码
+		                </a>
+		            </li>
+		            <li class="mui-table-view-cell">
+		                <a class="mui-navigate-right"  onclick="edit_input('bank','银行信息')">
+		                    <span id="bank" class="mui-badge">中国银行</span>
+		                   			 银行信息
+		                </a>
+		            </li>
+		         	<li class="mui-table-view-cell">
+		                <a class="mui-navigate-right"  onclick="edit_input('bank_card','银行卡号')">
+		                    <span id="bank_card" class="mui-badge"></span>
+		                   			 银行卡号
+		                </a>
+		            </li>
+		       		<li class="mui-table-view-cell">
+		                <a class="mui-navigate-right"  onclick="edit_input('account_type','账户类型')">
+		                    <span id="account_type" class="mui-badge"></span>
+		                   			 账户类型
+		                </a>
+		            </li>
+		         	<li class="mui-table-view-cell">
+		                <a class="mui-navigate-right"  onclick="edit_input('qq','QQ账号')">
+		                    <span id="qq" class="mui-badge"></span>
+		                   			 QQ账号
+		                   			
+		                </a>
+		            </li>
+		           	<li class="mui-table-view-cell">
+		                <a class="mui-navigate-right"  onclick="edit_input('nick','昵称')">
+		                    <span  id="nick" class="mui-badge">黄豆酱</span>
+		                   			 昵称
+		                   			
+		                </a>
+		            </li>
+		        </ul>
+		    </div>
+		    <div class="div-person-bottom">
+		    	<div class="div-center-cont">
+		    			<img class="img-person-bottom" src="img/buttom_submit.png"></img>
+		    	</div>
+		    
+		    </div>
+
+		</div>
+		<script src="js/mui.js"></script>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="appjs/app.js"></script>
+		<script src="js/layer.js"></script>
+		
+		<script type="text/javascript" charset="utf-8">
+			jQuery.getScript("appjs/person_max.js?rnd=" + Math.random(), function(data, status, jqxhr) {
+				loadPersonMaxInfo();
+			});
+
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		</script>
+	</body>
+	<script>
+		function check_mui_css() {
+			$("#my_nav").css("background-color", "#ffffff");
+		}
+		check_mui_css();
+		$(document).ready(function() {
+			$('#slider').height($(window).height() / 3);
+		});
+	</script>
+
+</html>

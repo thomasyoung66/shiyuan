@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>MAXHUB微信商城</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+
+		
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<style>
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+
+			
+		.mui-badge
+		{
+		    font-size: 12px;
+		    line-height: 1;
+		    display: inline-block;
+		    padding: 3px 6px;
+		    color: #808080;
+		    border-radius: 0px !important;
+		     background-color: rgb(255,255,255) !important;
+		}
+
+		</style>
+	</head>
+
+	<body class="body_style">
+		<div class="mui-content">
+
+		    <div class="mui-card">
+		        <ul class="mui-table-view">
+
+		            <li class="mui-table-view-cell">
+		                <a class="mui-navigate-right" onclick="edit_input('name','姓名')">
+		                    <span id="name" class="mui-badge" >黄咖啡</span>
+		                    		姓名
+		                </a>
+		            </li>
+		            <li class="mui-table-view-cell">
+		                <a class="mui-navigate-right"  onclick="edit_input('phone','手机号码')">
+		                   <span id="phone" class="mui-badge">188888888</span>
+		                  		  手机号码
+		                </a>
+		            </li>
+		            <li class="mui-table-view-cell">
+		                <a class="mui-navigate-right" onclick="edit_input('nick','昵称')">
+		                    <span id="nick" class="mui-badge">网购大侠</span>
+		                   			 昵称
+		                </a>
+		            </li>
+		         	<li class="mui-table-view-cell">
+		                <a class="mui-navigate-right"  onclick="edit_input('addr','联系地址')">
+		                    <span id="addr" class="mui-badge">广州市天河区</span>
+		                   			 联系地址
+		                </a>
+		            </li>
+		       		<li class="mui-table-view-cell">
+		                <a class="mui-navigate-right" onclick="edit_input('age','联系地址')">
+		                    <span id="age" class="mui-badge">请输入年龄</span>
+		                   			 年龄
+		                </a>
+		            </li>
+		         	<li class="mui-table-view-cell">
+		                <a class="mui-navigate-right" onclick="edit_input('inter','娱乐兴趣')">
+		                    <span id="inter" class="mui-badge">瑜伽</span>
+		                   	娱乐兴趣		 
+		                </a>
+		            </li>
+		        </ul>
+		    </div>
+		    <div class="div-person-bottom">
+		    	<div class="div-center-cont">
+		    			<img class="img-person-bottom" src="img/buttom_submit.png"></img>
+		    	</div>
+		    
+		    </div>
+		</div>
+		<script src="js/mui.js"></script>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/layer.js"></script>
+		
+		<script src="appjs/app.js"></script>
+
+		<script type="text/javascript" charset="utf-8">
+			jQuery.getScript("appjs/person.js?rnd=" + Math.random(), function(data, status, jqxhr) {
+				loadPersonInfo();
+			});
+
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		</script>
+	</body>
+	<script>
+		function check_mui_css() {
+			$("#my_nav").css("background-color", "#ffffff");
+		}
+		check_mui_css();
+		$(document).ready(function() {
+			$('#slider').height($(window).height() / 3);
+		});
+	</script>
+
+</html>

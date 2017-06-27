@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>地址编辑</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.css" />
+		
+		<style>
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+			.oa-contact-cell.mui-table .mui-table-cell {
+				padding: 11px 0;
+				vertical-align: middle;
+			}
+			
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+			
+			.oa-contact-avatar {
+				width: 75px;
+			}
+			
+			.oa-contact-avatar img {
+				border-radius: 50%;
+			}
+			
+			.oa-contact-content {
+				width: 100%;
+			}
+			
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			
+			.oa-contact-name,
+			oa-contact-position {
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body class="body_style">
+		<div class="mui-content">
+			<div style="height:10px;background: #fff;"></div>
+			<div class="div-addr-edit-item" >
+				收件人&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" style="width:300px;" class="mui-input-clear" placeholder="请输入收件人" data-input-clear="5"></input>
+				
+			</div>
+			<div class="div-addr-edit-item">
+				联系电话&nbsp;&nbsp;<input type="text" style="width:300px;" class="mui-input-clear" placeholder="请输入电话" data-input-clear="5"></input>
+				
+			</div>
+			<div class="div-addr-edit-item">
+				<div class="div-addr-edit-item-left">所在地区</div>
+				<div class="div-addr-edit-item-right" onclick="gotoSelectCity()">
+					<span id="curr_city">广州天河区</span>
+				<img class="center-image-v" style="width:24px;" src="img/bug/buger_right.png" />
+				</div>
+				<div class="div-clear"></div>
+				
+			</div>
+			<div class="div-addr-edit-item">
+				<div class="div-addr-edit-item-left">街道</div>
+				<div class="div-addr-edit-item-right">岗顶街道
+					<img class="center-image-v" style="width:24px;" src="img/bug/buger_right.png" />
+				</div>
+				<div class="div-clear"></div>
+			</div>
+			<div class="div-addr-edit-item" style="height:150px;padding-right:10px;">
+				<textarea id="textarea" rows="5" placeholder="填写详细地址"></textarea>
+			</div>
+			
+			<div class="div-addr-edit-default">
+				<div class="div-addr-edit-item-left">
+					设为默认
+				</div> 
+				<div class="div-addr-edit-item-right" style="padding-top:12px;">
+					<div>
+				<div class="mui-switch mui-switch-mini mui-active ">
+						<div class="mui-switch-handle"></div>
+					</div>		
+					</div>
+
+
+				</div>
+				<div class="div-clear"></div>
+
+			</div>
+
+
+
+		</div>
+		<script src="js/mui.js"></script>
+		<script src="appjs/mui.picker.min.js"></script>
+		<script src="appjs/city.data-3.js"></script>
+		
+		
+		<script src="js/jquery-1.11.1.min.js"></script>
+		
+		<script src="appjs/app.js"></script>
+
+		<script type="text/javascript" charset="utf-8">
+			jQuery.getScript("appjs/addr_edit.js?rnd=" + Math.random(), function(data, status, jqxhr) {
+				loadAddrEdit();
+			});
+
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		</script>
+	</body>
+	<script>
+		function check_mui_css() {
+			$("#my_nav").css("background-color", "#ffffff");
+		}
+		check_mui_css();
+		$(document).ready(function() {
+			$('#slider').height($(window).height() / 3);
+		});
+	</script>
+
+</html>

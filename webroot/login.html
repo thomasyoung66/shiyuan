@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>登陆</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<style>
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+
+			
+
+
+		</style>
+	</head>
+
+	<body class="body_style">
+		<div class="mui-content">
+			<img src="img/login/login_bk.jpg" />
+			<div class="div-login-frame">
+				<div class="div-login-name">
+					<div class="mui-input-row">
+						<input type="text" class="mui-input-clear login_input" placeholder="请输入你的名字">
+					</div>
+				</div>
+				<div class="div-line"></div>
+				<div class="div-login-phone">
+					<div class="mui-input-row">
+					<input type="text" class="mui-input-clear login_input" placeholder="请输入的手机号码" >
+					</div>
+				</div>
+				
+			</div>
+			<div class="div-login-allow" > 
+				
+	
+				<div class="div-login-allow-1  ">
+					<img class="img-login-check" src="img/login/check_on.png"></img>
+				
+				</div>
+				<div class="div-login-allow-2">
+					已阅读并同意<span class="color-high"><<软件许可服务协议>></span>
+				</div>
+			
+			</div>
+			<div class="div-login-bottom">
+				<div  class="div-center-cont">
+						<img class="img-login-bottom" src="img/login/submit.png"></img>
+				</div>
+			
+			</div>
+			
+		</div>
+		<script src="js/mui.js"></script>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="appjs/app.js"></script>
+
+		<script type="text/javascript" charset="utf-8">
+			jQuery.getScript("appjs/login.js?rnd=" + Math.random(), function(data, status, jqxhr) {
+				loadLoginInfo();
+			});
+
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		</script>
+	</body>
+	<script>
+		function check_mui_css() {
+			$("#my_nav").css("background-color", "#ffffff");
+		}
+		check_mui_css();
+		$(document).ready(function() {
+			$('#slider').height($(window).height() / 3);
+		});
+	</script>
+
+</html>
